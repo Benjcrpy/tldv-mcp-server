@@ -5,14 +5,14 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "start": "node dist/index.js",
-        "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-        "build": "rm -rf dist && npm run bundle && chmod +x dist/*.js",
-        "bundle": "node scripts/build.js",
-        "prepare": "npm run build",
-        "watch": "tsc --watch",
-        "release": "standard-version -m \"chore(release): {{currentTag}} [release]\""
-    },
+  "start": "node dist/index.js",
+  "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+  "build": "tsc",
+  "prepare": "tsc",
+  "watch": "tsc --watch",
+  "release": "standard-version -m \"chore(release): {{currentTag}} [release]\""
+},
+
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.8.0",
         "axios": "^1.8.4",
@@ -24,6 +24,7 @@
         "@types/node": "^20.11.19",
         "esbuild": "^0.25.2",
         "esbuild-node-externals": "^1.18.0",
+        "rimraf": "^6.0.1",
         "ts-node-dev": "^2.0.0",
         "typescript": "^5.3.3"
     },
